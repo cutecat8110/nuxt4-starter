@@ -1,0 +1,10 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always", // 儲存時自動修復 ESLint 問題
+    "source.fixAll.stylelint": "always" // 儲存時自動修復 Stylelint 問題
+  },
+  "eslint.validate": ["javascript", "typescript", "vue"], // 讓 ESLint 支援 JS/TS/Vue
+  "editor.formatOnSave": true, // 儲存時自動格式化（Prettier）
+  "editor.defaultFormatter": "esbenp.prettier-vscode", // 指定 Prettier 為預設格式化工具
+  "stylelint.validate": ["css", "scss"]
+}
