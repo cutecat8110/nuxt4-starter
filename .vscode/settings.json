@@ -1,10 +1,12 @@
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "always", // 儲存時自動修復 ESLint 問題
-    "source.fixAll.stylelint": "always" // 儲存時自動修復 Stylelint 問題
+    "source.fixAll.eslint": "always", // ESLint：存檔時修復
+    "source.fixAll.stylelint": "always" // Stylelint：存檔時修復
   },
-  "eslint.validate": ["javascript", "typescript", "vue"], // 讓 ESLint 支援 JS/TS/Vue
-  "editor.formatOnSave": true, // 儲存時自動格式化（Prettier）
-  "editor.defaultFormatter": "esbenp.prettier-vscode", // 指定 Prettier 為預設格式化工具
-  "stylelint.validate": ["css", "scss"]
+  "editor.formatOnSave": true, // Prettier：存檔時格式化
+  "editor.defaultFormatter": "esbenp.prettier-vscode", // Prettier：設為預設格式化器
+  "eslint.validate": ["javascript", "typescript", "vue"], // ESLint：驗證檔案類型
+  "stylelint.validate": ["css", "scss", "vue"], // Stylelint：驗證檔案類型
+  "stylelint.config": null, // Stylelint：使用專案設定
+  "stylelint.enable": true // Stylelint：啟用
 }

@@ -1,32 +1,38 @@
 // @ts-check
 import withNuxt from './.nuxt/eslint.config.mjs'
+import vuejsA11y from 'eslint-plugin-vuejs-accessibility'
 
-// Nuxt 專案 ESLint 設定
 export default withNuxt([
-  // 一般 JS/TS 規則
+  // Plugin: vuejs-accessibility
+  vuejsA11y.configs['flat/recommended'],
+
+  // General Rules
   {
     rules: {
-      'prefer-const': 'error', // 能用 const 就不用 let
-      'no-unused-vars': 'warn', // 未使用的變數警告
-      'no-console': 'warn', // 禁止 console，僅警告
+      'prefer-const': 'error', // const 使用：要求
+      'no-unused-vars': 'warn', // 未使用變數：警告
+      // 開發時允許 console，生產環境則報錯
+      'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     },
   },
-  // TypeScript 專用規則
+
+  // TypeScript Rules
   {
     files: ['**/*.ts', '**/*.tsx', '**/*.vue'],
     rules: {
-      '@typescript-eslint/no-explicit-any': 'warn', // 避免使用 any
-      '@typescript-eslint/explicit-function-return-type': 'off', // 可視需求開啟
+      '@typescript-eslint/no-explicit-any': 'warn', // any 型別：警告
+      '@typescript-eslint/explicit-function-return-type': 'off', // 函式回傳型別：關閉
     },
   },
-  // Vue 專用規則
+
+  // Vue Rules
   {
     files: ['**/*.vue'],
     rules: {
-      'vue/no-unused-components': 'warn', // 未使用的元件警告
-      'vue/multi-word-component-names': 'off', // 單字元件名不報錯
-      // 自動排序 template 屬性
-      'vue/attributes-order': ['warn', { alphabetical: true }],
+      'vue/no-unused-components': 'warn', // 未使用元件：警告
+      // 元件名：建議使用多字組合
+      'vue/multi-word-component-names': 'warn',
+      'vue/attributes-order': ['warn', { alphabetical: true }], // template 屬性排序：字母序
     },
   },
 ])

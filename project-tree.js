@@ -73,7 +73,7 @@ function listStructure(startPath, prefix = '', isLast = false, rootPath = '.') {
       }
     })
   } catch {
-    // ignore
+    // 忽略讀取錯誤
   }
   return output
 }

@@ -1,0 +1,12 @@
+# 依賴套件
+node_modules/
+
+# 建置產物
+dist/
+.nuxt/
+.output/
+
+# 文件產物
+docs/public/
+docs/.vitepress/cache/
+docs/.vitepress/dist/
